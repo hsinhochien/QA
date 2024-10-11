@@ -1,7 +1,7 @@
 #!/bin/bash
 
-FOLDER_ID_1="https://drive.google.com/drive/folders/1nuaqs9SUFnc1SRHAdYbRuJ0vPwX5joQn?usp=sharing"
-FOLDER_ID_2="https://drive.google.com/drive/folders/1kZ2hy1YVgBAMbP_jJN4wlcDCRIXD7qzQ?usp=sharing"
+FOLDER_ID_1="" # Replace it with the model parameters folder from your Google Cloud.
+FOLDER_ID_2="" # Replace it with the model parameters folder from your Google Cloud.
 
 # 定義下載後存放的目錄
 MODEL_DIR_1="./paragraph_selection_model_parameters"
