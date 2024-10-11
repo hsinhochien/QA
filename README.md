@@ -35,23 +35,3 @@ This will download the folders ./finetuned_mc and ./finetuned_qa, which contain 
 ## run.sh
 Run this file by executing ```bash ./run.sh /path/to/context.json /path/to/test.json /path/to/pred/prediction.csv```. <br>
 This will execute the inference.py file.
-
-## qa-not-pretrained.ipynb
-This file trains a transformer-based model without pre-trained weights.
-### Prerequisite
-```pip install torch transformers datasets tqdm```
-### Steps to train the model
-1. Prepare data <br>
-Ensure you have the files context.json, train.json, valid.json ready.
-2. Tokenization and Preprocessing <br>
-The dataset is tokenized using the bert-base-chinese tokenizer. The ```preprocess_function``` processes each example by:
->* Tokenizing the question and relevant context.
->* Mapping the answer's start and end positions to token positions in the tokenized context.
-3. Define the Model <br>
-The TransformerQA model is defined with an embedding layer, positional encoding, Transformer encoders, and two linear layers to predict the start and end positions of answers:
-4. Train the Model <br>
-Training is conducted using the train function, which:
->* Loads the tokenized_train_dataset into a DataLoader.
->* For each batch, forwards the input through the model to obtain start and end logits.
->* Computes the cross-entropy loss for both start and end positions.
->* Updates model parameters using backpropagation and the AdamW optimizer.
